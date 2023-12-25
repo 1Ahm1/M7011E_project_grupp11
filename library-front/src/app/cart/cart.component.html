@@ -1,0 +1,57 @@
+<nav class="navbar has-background-light" role="navigation" aria-label="main navigation">
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <div class = "navbar-item is-clickable" (click) = goToHome()>
+                <img src="../../assets/icons/library.jpg" alt="">
+                <div>Online Book Shop</div>
+            </div>
+        </div>
+        <div class="navbar-end">
+            <div class = "navbar-item is-clickable" [routerLink]="['/cart']">
+                <img src="../../assets/icons/shopping_cart.png" alt="">
+            </div>
+        </div>
+    </div>
+</nav>
+
+<h1 class="title">My Cart</h1>
+
+<div class="columns is-multiline is-centered mt-4">
+
+    <div class="column is-4" *ngFor="let o of orders">
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-96x96">
+                            <img [src]="o.book.image" onerror="this.onerror=null; this.src='https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg';" alt="Book Image">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-5">{{o.book.name}}</p>
+                        <p class="subtitle is-6">{{o.book.author}}</p>
+                        <p>Language: {{o.book.language}}</p>
+                        <p>{{o.book.year}}</p>
+                        <p>Quantity: {{o.quantity}}</p>
+                        <p>Price: ${{(o.quantity * o.book.price).toFixed(2)}} USD</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="buttons">
+                        <a class="button is-danger is-small" (click)="removeOrder(o.id)">Remove</a>
+                    </div>
+                    <label class="checkbox ml-2">
+                        <input type="checkbox" [(ngModel)]="o.selected" [value]="o.id" (ngModelChange)="onCheckboxChange()">
+                        <span class="ml-1">Select</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4 has-text-centered" *ngIf="orders.length>0">
+    <button class="button is-link" (click)="purchase()">
+        Purchase
+    </button>
+</div>

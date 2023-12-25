@@ -1,0 +1,31 @@
+<aside class="menu">
+  <p class="label">
+    {{profile?.name}}
+  </p>
+  <p class="label">
+    {{profile?.email}}
+  </p>
+  <p class="label">
+    {{profile?.defaultRole}}
+  </p>
+  <p class="menu-label" *ngIf="authService.getRole()=='customer'">
+    Home
+  </p>
+  <ul class="menu-list" *ngIf="authService.getRole()=='customer'">
+    <li [routerLink]="['/home']"><a>Homepage</a></li>
+  </ul>
+  <p class="menu-label">
+    Profile
+  </p>
+  <ul class="menu-list">
+    <li [routerLink]="['/profile']"><a>Settings</a></li>
+    <li (click) = "authService.logout()"><a>Logout</a></li>
+  </ul>
+  <p class="menu-label" *ngIf="authService.getRole()=='customer'">
+    Shopping
+  </p>
+  <ul class="menu-list" *ngIf="authService.getRole()=='customer'">
+    <li [routerLink]="['/cart']"><a>Cart</a></li>
+    <li [routerLink]="['/library']"><a>My Books</a></li>
+  </ul>
+</aside>

@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    overflow: hidden;
+    height: 600px;
+}
+
+.auth-box {
+    padding: 25px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    width: 320px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    letter-spacing: 30px;
+}

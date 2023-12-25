@@ -1,0 +1,40 @@
+<nav class="navbar has-background-light" role="navigation" aria-label="main navigation">
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <div class = "navbar-item is-clickable" (click) = goToHome()>
+                <img src="../../assets/icons/library.jpg" alt="">
+                <div>Online Book Shop</div>
+            </div>
+        </div>
+        <div class="navbar-end">
+            <div class = "navbar-item is-clickable" [routerLink]="['/cart']">
+                <img src="../../assets/icons/shopping_cart.png" alt="">
+            </div>
+        </div>
+    </div>
+</nav>
+<h1 class="title">My Books</h1>
+
+<div class="columns is-multiline mt-4">
+    <div class="column is-4" *ngFor="let o of orders">
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-64x64">
+                            <img [src]="o.book.image" onerror="this.onerror=null; this.src='https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg';" alt="Book Image">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-6">{{o.book.name}}</p>
+                        <p class="subtitle is-7">{{o.book.author}}</p>
+                        <p>Language: {{o.book.language}}</p>
+                        <p>{{o.book.year}}</p>
+                        <p>Quantity: {{o.quantity}}</p>
+                        <p>Price: ${{(o.quantity * o.book.price).toFixed(2)}} USD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

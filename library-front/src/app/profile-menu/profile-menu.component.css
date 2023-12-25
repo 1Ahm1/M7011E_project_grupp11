@@ -1,0 +1,12 @@
+.menu {
+  position: sticky;
+  display: inline-block;
+  vertical-align: top;
+  min-height: 100vh;
+  overflow-y: auto;
+  width: 200px;
+  top: 0;
+  bottom: 0;
+  padding: 30px;
+  box-shadow: 1px 0 0;
+}

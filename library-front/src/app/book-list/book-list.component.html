@@ -1,0 +1,48 @@
+<nav class="navbar has-background-light" role="navigation" aria-label="main navigation">
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <div class = "navbar-item is-clickable" (click) = goToHome()>
+                <img src="../../assets/icons/library.jpg" alt="">
+                <div>Online Book Shop</div>
+            </div>
+        </div>
+        <div class="navbar-end">
+            <div class = "navbar-item">
+                <div id="search" class="bd-search">
+                    <p class="control has-icons-left">
+                      <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;">
+                        <input id="algoliaSearch" class="input is-rounded ds-input" type="text" placeholder="Search by book name" [(ngModel)]="search" (keyup.enter)="updateFilter()">
+                      </span>
+                      <span class="icon is-small is-left">
+                        <img src="../../assets/icons/search.png" alt="">
+                      </span>
+                    </p>
+                  </div>
+            </div>
+            <div class = "navbar-item is-clickable" [routerLink]="['/cart']">
+                <img src="../../assets/icons/shopping_cart.png" alt="">
+            </div>
+        </div>
+    </div>
+</nav>
+<section class = "m-6">
+    <div class = "columns" *ngFor = "let books of bookList">
+        <div class = "column is-3" *ngFor = "let b of books">
+            <div class = "card" [routerLink]="['/book', b.id]">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img [src]="b.image" onerror="this.onerror=null; this.src='https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198';" alt="Image">
+                    </figure>
+                </div>
+                <div class = "card-content">
+                    <div class="title is-6">{{b.name}}</div>
+                    <div class="subtitle is-7">{{b.author}}</div>
+                    <div>{{b.year}}</div>
+                    <div>Language: {{b.language}}</div>
+                    <div>{{b.price}} USD</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

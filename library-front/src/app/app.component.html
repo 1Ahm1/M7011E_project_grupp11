@@ -1,0 +1,8 @@
+<body>
+    <div class="columns">
+        <app-profile-menu class="menu" *ngIf="authService.isAuthenticated()"></app-profile-menu>
+        <div class="column content m-0 pt-3 pl-1">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</body>

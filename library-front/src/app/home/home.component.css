@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    margin: 0;
+}
+.app-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .main-page-container {
+    flex: 1;
+    padding-left: 300px
+  }
+
+  .profile-menu {
+    width: 200px ;
+    position: fixed;
+  }
