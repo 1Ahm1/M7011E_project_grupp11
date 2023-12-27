@@ -1,49 +1,45 @@
-# Project Requirements and Execution
+# Requirements
 
-## System Prerequisites
+## MySQL Installation
+- Download and install the MySQL database management system from the official [MySQL Installer](https://dev.mysql.com/downloads/installer/).
+- Add MySQL to the system's PATH variables during installation.
 
-### 1. MySQL Installation
-- Obtain the MySQL database management system from the official [MySQL Installer](https://dev.mysql.com/downloads/installer/).
-- Ensure that MySQL is integrated into the system's PATH variables during installation.
-
-### 2. Python Installation
+## Python Installation
 - Download and install the latest version of Python from the official [Python Downloads](https://www.python.org/downloads/).
-- Ensure Python is added to the system's PATH variables during installation.
+- Add Python to the system's PATH variables during installation.
 
-## Backend Configuration
+## Backend Requirements
+1. Navigate to the Fastapi-project1 subdirectory within the project directory:
+    ```bash
+    cd [project-directory]/Fastapi-project1
+    ```
+2. Install the required Python packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-### 3. Backend Requirements
-Navigate to the Fastapi-project1 subdirectory within the project directory:
+## Node.js Installation
+- Download and install Node.js from the official [Node.js Downloads](https://nodejs.org/en/download/).
 
-```bash
-cd [project-directory]/Fastapi-project1
-Install the required Python packages using:
+## Angular Installation
+- Install the Angular CLI globally using the following command:
+    ```bash
+    npm install -g @angular/cli
+    ```
+- Navigate to the library-front subdirectory within the project directory:
+    ```bash
+    cd [project-directory]/library-front
+    ```
+- Install the necessary Node.js packages:
+    ```bash
+    npm install
+    ```
 
-pip install -r requirements.txt
-Frontend Setup
-4. Node.js Installation
-Acquire Node.js from the official Node.js Downloads.
+## Run Project
+- Execute the project by double-clicking on the provided run batch file.
+- This script automates the following processes:
+    1. Creation of the database with initial data.
+    2. Launching the app server with Python.
+    3. Launching the website.
 
-5. Angular Installation
-Install the Angular CLI globally using:
-
-
-npm install -g @angular/cli
-Navigate to the library-front subdirectory within the project directory:
-
-
-cd [project-directory]/library-front
-Install the necessary Node.js packages:
-
-npm install
-Project Execution
-6. Run Project
-Execute the project by double-clicking on the provided run batch file. This script orchestrates the following processes:
-
-Creation of the database with initial data.
-Launching the app server with Python.
-Launching the website.
-This document provides a comprehensive guide for setting up and executing the project, adhering to best practices and ensuring a seamless development environment. Adjust the [project-directory] placeholder with the actual path as needed.
-
-
-Feel free to use and adapt this content to suit the specifics of your project.
+**Note:** Adjust the `[project-directory]` placeholder with the actual path as needed.
