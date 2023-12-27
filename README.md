@@ -2,9 +2,9 @@
 
 ## Course Details
 
-- **Course Name:** [Dynamic Web Systems (M7011E)]
-- **Instructor:** [Sandeep Patil]
-- **Semester/Year:** [LP2/2023]
+- **Course Name:** Dynamic Web Systems (M7011E)
+- **Instructor:** Sandeep Patil
+- **Semester/Year:** LP2/2023
 
 ## Project Team
 
