@@ -1,3 +1,20 @@
+# Project Information
+
+## Course Details
+
+- **Course Name:** [Dynamic Web Systems (M7011E)]
+- **Instructor:** [Sandeep Patil]
+- **Semester/Year:** [LP2/2023]
+
+## Project Team
+
+### Students
+
+1. **Ahmad Allahham**
+   - **Email:** ahmall-0@student.ltu.se
+
+2. **Arian Asghari**
+   - **Email:** ariasg-0@student.ltu.se
 # Requirements
 
 ## MySQL Installation
