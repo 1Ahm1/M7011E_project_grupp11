@@ -81,7 +81,6 @@ def validate_token_and_get_payload(token, conn = None, *, is_refresh_token = Fal
     secret = REFRESH_TOKENS_SECRET if is_refresh_token else TOKENS_SECRET
     payload = jwt.decode(token, secret, algorithms=TOKEN_ENCODING_ALGORITHM)
     user_id = payload.get("id", None)
-    print(token)
     assert type(user_id) == int
     if is_refresh_token: assert _check_refresh_token_in_db(conn, user_id, token)
     return {

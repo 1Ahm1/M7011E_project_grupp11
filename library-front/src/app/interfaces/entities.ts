@@ -17,6 +17,22 @@ export interface Order {
     selected: boolean;
 }
 
+
+export interface AdminOrder {
+    id: number;
+    book: Book;
+    quantity: number;
+    customer: Customer;
+    selected: boolean;
+}
+
+export interface Customer {
+    id: number;
+    name: String;
+    email: String;
+}
+
+
 export interface UserProfile {
     userId: number;
     email: String;

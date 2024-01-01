@@ -114,7 +114,7 @@ class Severity(Enum):
 class UserType(Enum):
     MANAGER = "manager"
     CUSTOMER = "customer"
-    WORKER = "worker"
+    ADMIN = "admin"
 
 class OrderType(Enum):
     ASC = "ASC"

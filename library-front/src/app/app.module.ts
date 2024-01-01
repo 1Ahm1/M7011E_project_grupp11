@@ -15,6 +15,7 @@ import { CartComponent } from './cart/cart.component';
 import { LibraryComponent } from './library/library.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateBookComponent } from './create-book/create-book.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CreateBookComponent } from './create-book/create-book.component';
     CartComponent,
     LibraryComponent,
     ProfileComponent,
-    CreateBookComponent
+    CreateBookComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,

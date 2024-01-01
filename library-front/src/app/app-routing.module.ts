@@ -7,11 +7,12 @@ import { ActivateUserComponent } from './activate-user/activate-user.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { ProfileMenuComponent } from './profile-menu/profile-menu.component';
-import { CustomerGuard, ManagerGuard, UserGuard } from './auth-guard';
+import { CustomerGuard, ManagerGuard, UserGuard, AdminGuard} from './auth-guard';
 import { CartComponent } from './cart/cart.component';
 import { LibraryComponent } from './library/library.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateBookComponent } from './create-book/create-book.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 const routes: Routes = [
   { path: 'home', component: BookListComponent, canActivate: [CustomerGuard] },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'activate-user', component: ActivateUserComponent },
-  { path: 'book/:bookId', component: BookDetailsComponent, canActivate: [CustomerGuard]}
+  { path: 'book/:bookId', component: BookDetailsComponent, canActivate: [CustomerGuard]},
+  { path: 'admin/home', component: AdminHomeComponent, canActivate: [AdminGuard]}
 ];
 
 @NgModule({

@@ -17,8 +17,10 @@ export class LoginComponent {
     {
       if(this.authService.getRole() === 'customer')
         this.router.navigate(['home/']);
-      else
+      else if(this.authService.getRole() === 'manager')
         this.router.navigate(['manager/home/']);
+      else
+        this.router.navigate(['admin/home/']);
     }
   }
 
@@ -39,8 +41,10 @@ export class LoginComponent {
       this.loginError = false;
       if(loginData.userProfile.defaultRole == 'customer')
         this.router.navigate(['home/']);
-      else
+      else if(loginData.userProfile.defaultRole == 'manager')
         this.router.navigate(['manager/home/']);
+      else
+        this.router.navigate(['admin/home/']);
     }
     catch(e) {
       this.loginError = true;

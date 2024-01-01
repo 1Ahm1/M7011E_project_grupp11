@@ -172,7 +172,7 @@ def login(conn, lang, data: LoginRequest):
     
 
 def activate_user(conn, lang: str, data: ActivateUserRequest):
-    assert data.role in ["customer", "worker", "manager"], "invalid-role"
+    assert data.role in ["customer", "admin", "manager"], "invalid-role"
     _validate_user_input(lang, email = data.email, phone_number = data.phone_number)
     pending_user = sql(
         conn,

@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request, HTTPException, Response, status, APIRouter
-from api.routers import customer,auth,book,product,order,manager, payment, user
+from api.routers import customer,auth,book,product,order,manager, payment, user, admin
 from api.middlewares.auth import auth_middleware
 from fastapi.responses import RedirectResponse, PlainTextResponse, JSONResponse
 import traceback
@@ -41,6 +41,7 @@ app.include_router(order.router)
 app.include_router(manager.router)
 app.include_router(payment.router)
 app.include_router(user.router)
+app.include_router(admin.router)
 
 
 

@@ -1,7 +1,7 @@
 
 from fastapi import Request, status
 from fastapi.responses import JSONResponse
-from domain.admin.admin import is_admin
+from domain.admin.home import is_admin
 from domain.utils.enums import MessageCode
 from domain.utils.general import ENV
 from domain.auth.security import validate_token_and_get_payload
@@ -47,19 +47,6 @@ def auth_middleware(request: Request):
         "id": user_id,
         "lang": lang
     }
-
-    if request.url.path.startswith("/admin/"):
-        with engine.begin() as conn:
-            if not is_admin(conn, user_id):
-                return JSONResponse(
-                    content = {
-                        "success": False,
-                        "message": get_message(MessageCode.NOT_FOUND, lang),
-                        "code": status.HTTP_404_NOT_FOUND
-                    },
-                    status_code = status.HTTP_200_OK
-                )
-
 
 
 

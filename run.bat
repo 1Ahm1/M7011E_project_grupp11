@@ -49,7 +49,7 @@ CREATE TABLE `refresh_token` (^
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,^
   PRIMARY KEY (`token`)^
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;^
-CREATE TABLE `system_admin` (^
+CREATE TABLE `admin` (^
   `user_id` int(10) UNSIGNED NOT NULL,^
   `is_active` bool DEFAULT true,^
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,^

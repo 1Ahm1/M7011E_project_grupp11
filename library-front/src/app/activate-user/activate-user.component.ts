@@ -24,8 +24,10 @@ export class ActivateUserComponent {
         this.codeError = false;
         if(data.userProfile.defaultRole == 'customer')
           this.router.navigate(['home/']);
-        else
+        else if(this.authService.getRole() === 'manager')
           this.router.navigate(['manager/home/']);
+        else
+          this.router.navigate(['admin/home/']);
       }
     }
     catch(e) {

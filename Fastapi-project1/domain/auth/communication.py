@@ -1,6 +1,6 @@
 
 from random import randint
-
+from domain.utils import communication
 
 def generate_validation_code():
     # ToDo: return an actual random code once sending codes is implemented
@@ -13,7 +13,7 @@ def send_code_to_phone_number(user_phone_number: str, code: int):
 
 # ToDo implement
 def send_code_to_email(user_email: str, code: int):
-    pass
+    communication.verification_code(user_email, code)
 
 
 

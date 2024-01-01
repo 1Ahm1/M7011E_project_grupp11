@@ -38,6 +38,23 @@ export class ManagerGuard implements CanActivate {
 @Injectable({
   providedIn: 'root'
 })
+export class AdminGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    if (this.authService.isAuthenticated() && this.authService.getRole() === 'admin') {
+      return true;
+    } else {
+      // Redirect to the login page and store the original URL for redirection after login
+      this.router.navigate(['/']);
+      return false;
+    }
+  }
+}
+
+@Injectable({
+  providedIn: 'root'
+})
 export class UserGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 

@@ -1,0 +1,34 @@
+<h1 class="title">Orders</h1>
+
+<div class="columns is-multiline mt-4">
+
+    <div class="column is-12" *ngFor="let o of orders">
+        <div class="box">
+            <div class="columns is-mobile">
+                <div class="column is-narrow">
+                    <figure class="image is-96x96">
+                        <img [src]="o.book.image" onerror="this.onerror=null; this.src='https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg';" alt="Book Image">
+                    </figure>
+                </div>
+                <div class="column">
+                    <p class="title is-5">{{o.book.name}}</p>
+                    <p class="subtitle is-6">{{o.book.author}}</p>
+                    <p>Language: {{o.book.language}}</p>
+                    <p>{{o.book.year}}</p>
+                    <p>Quantity: {{o.quantity}}</p>
+                    <p>Price: ${{(o.quantity * o.book.price).toFixed(2)}} USD</p>
+                </div>
+                <div class="column">
+                    <p class="title is-5">Ordered By: {{o.customer.name}}</p>
+                    <p class="subtitle is-6">{{o.customer.email}}</p>
+                </div>
+                <div class="column is-narrow">
+                    <div class="buttons">
+                        <a class="button is-danger is-small" (click)="removeOrder(o.id)">Remove</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
