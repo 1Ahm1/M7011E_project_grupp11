@@ -16,7 +16,6 @@
 2. **Arian Asghari**
    - **Email:** ariasg-0@student.ltu.se
 
-# Requirements
 
 ## Project Overview
 
@@ -30,6 +29,8 @@ This project focuses on creating a dynamic web system using modern technologies.
 - Integrate third-party packages to enhance functionality.
 - Demonstrate an understanding of ethical considerations related to sensitive user data.
 - Model, simulate, predict, and evaluate the web system's performance.
+
+# Requirements
 
 ## Setup Instructions
 
