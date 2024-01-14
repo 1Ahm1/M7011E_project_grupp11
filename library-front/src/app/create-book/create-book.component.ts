@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { BookService } from '../services/book.service';
 import { success, fail } from 'src/utils/general';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-book',
   templateUrl: './create-book.component.html'
 })
 export class CreateBookComponent {
-  constructor() {
+  constructor(private router: Router) {
   }
 
   name: String = '';
@@ -30,7 +31,7 @@ export class CreateBookComponent {
       this.language = '';
       this.stock = 0;
       success('Book added successfully');
-
+      this.router.navigate(['manager/home'])
     }
     catch(e)
     {

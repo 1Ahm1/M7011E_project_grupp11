@@ -40,3 +40,15 @@ export interface CreateBookRequest {
     year: String;
     language: String;
 }
+
+export interface UpdateBookRequest
+{
+    book_id: number;
+    name: String;
+    author: String;
+    description: String;
+    stock: number;
+    price: number;
+    year: String;
+    language: String;
+}

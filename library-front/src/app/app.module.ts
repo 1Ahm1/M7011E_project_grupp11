@@ -16,6 +16,8 @@ import { LibraryComponent } from './library/library.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { ManagerBookListComponent } from './manager-book-list/manager-book-list.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     LibraryComponent,
     ProfileComponent,
     CreateBookComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    ManagerBookListComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,

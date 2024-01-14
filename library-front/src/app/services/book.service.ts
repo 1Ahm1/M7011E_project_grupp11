@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { BASE_URL } from 'src/utils/configs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BookListResponse } from '../interfaces/responses';
-import { CreateBookRequest } from '../interfaces/requests';
+import { CreateBookRequest, UpdateBookRequest } from '../interfaces/requests';
 
 @Injectable({
   providedIn: 'root'
@@ -88,4 +88,43 @@ export class BookService {
     let response = await this.http.post<any>(createBookUrl, requestBody, { headers: headers }).toPromise();
     await this.authService.handleResponse(response);
   }
+
+  async updateBook(bookId: number, name: String, author: String, stock: number, description: String, price: number, year: String, language: String): Promise<void> {
+    const updateBookUrl = BASE_URL + 'manager/book/update/';
+    
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Token': this.authService.getAccessToken().toString(),
+      'lang': 'en'
+    });
+    
+    const requestBody: UpdateBookRequest = {
+      book_id: bookId,
+      name: name,
+      author: author,
+      stock: stock,
+      description: description,
+      price: price,
+      year: year,
+      language: language
+    };
+
+    let response = await this.http.post<any>(updateBookUrl, requestBody, { headers: headers }).toPromise();
+    await this.authService.handleResponse(response);
+  }
+
+  async deleteBook(bookId: number): Promise<void> {
+    const deleteBookUrl = BASE_URL + 'manager/book/delete/' + bookId;
+    
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Token': this.authService.getAccessToken().toString(),
+      'lang': 'en'
+    });
+    
+
+    let response = await this.http.delete<any>(deleteBookUrl, { headers: headers }).toPromise();
+    await this.authService.handleResponse(response);
+  }
+  
 }

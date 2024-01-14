@@ -13,10 +13,14 @@ import { LibraryComponent } from './library/library.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { ManagerBookListComponent } from './manager-book-list/manager-book-list.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
 
 const routes: Routes = [
   { path: 'home', component: BookListComponent, canActivate: [CustomerGuard] },
-  { path: 'manager/home', component: CreateBookComponent, canActivate: [ManagerGuard] },
+  { path: 'manager/create', component: CreateBookComponent, canActivate: [ManagerGuard] },
+  { path: 'manager/home', component: ManagerBookListComponent, canActivate: [ManagerGuard] },
+  { path: 'manager/book/:bookId', component: EditBookComponent, canActivate: [ManagerGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [UserGuard] },
   { path: 'cart', component: CartComponent, canActivate: [CustomerGuard] },
   { path: 'library', component: LibraryComponent, canActivate: [CustomerGuard] },

@@ -31,7 +31,25 @@ def create_book(conn, user_info: UserInfo, data: models.CreateBookRequest):
         language = data.language
     ).lastrowid
     
+def update_book(conn, user_info: UserInfo, data: models.UpdateBookRequest):
 
+    sql(
+        conn,
+        """
+            UPDATE `book`
+            SET `name` = :name, `author` = :author, `description` = :description, `stock` = :stock, `year` = :year, `price` = :price, `language` = :language 
+            WHERE `book_id` = :book_id
+        """,
+        book_id = data.book_id,
+        author = data.author,
+        name = data.name,
+        description = data.description,
+        stock = data.stock,
+        year = data.year,
+        price = data.price,
+        language = data.language
+    )
+        
 def delete_book(conn, user_info: UserInfo, book_id: int):
 
     sql(

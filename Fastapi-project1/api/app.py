@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request, HTTPException, Response, status, APIRouter
-from api.routers import customer,auth,book,product,order,manager, payment, user, admin
+from api.routers import customer,auth,book,order,manager, payment, user, admin
 from api.middlewares.auth import auth_middleware
 from fastapi.responses import RedirectResponse, PlainTextResponse, JSONResponse
 import traceback
@@ -36,7 +36,6 @@ async def middleware(request: Request, call_next):
 app.include_router(customer.router)
 app.include_router(auth.router)
 app.include_router(book.router)
-app.include_router(product.router)
 app.include_router(order.router)
 app.include_router(manager.router)
 app.include_router(payment.router)

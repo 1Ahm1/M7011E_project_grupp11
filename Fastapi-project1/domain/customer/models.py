@@ -23,13 +23,16 @@ class CreateBookRequest(BaseModel):
     year: str
     price: float
     language: str
-    
 
-class CreateProductRequest(BaseModel):
-    name: str
-    price: int
-    quantity: int
+class UpdateBookRequest(BaseModel):
     book_id: int
+    name: str
+    author: str
+    description: str = None
+    stock: int
+    year: str
+    price: float
+    language: str
 
 class CreateOrderRequest(BaseModel):
     quantity: int

@@ -28,16 +28,24 @@ async def create_book_endpoint(request: Request, data: models.CreateBookRequest)
         home.create_book(conn, get_user_info(request), data)
         return StandardResponse.success_response({})
     
-@router.post("/delete/{book_id}")
+@router.delete("/delete/{book_id}")
 async def delete_book_endpoint(request: Request, book_id: int):
     with engine.begin() as conn:
-        return home.delete_book(conn, get_user_info(request), book_id)
+        home.delete_book(conn, get_user_info(request), book_id)
+        return StandardResponse.success_response({})
 
 @router.get("/search/{book_id}")
 async def search_book_endpoint(request: Request, book_id: int):
     with engine.begin() as conn:
         return StandardResponse.success_response(
             home.book_details(conn, get_user_info(request), book_id)
+        )
+
+@router.post("/update/")
+async def update_book_endpoint(request: Request, data: models.UpdateBookRequest):
+    with engine.begin() as conn:
+        return StandardResponse.success_response(
+            home.update_book(conn, get_user_info(request), data)
         )
 
 @router.get("/get/")

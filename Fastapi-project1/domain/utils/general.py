@@ -85,14 +85,9 @@ class OrderInfo(BaseModel):
     order_id: int
     price: int
     quantity: int
-    product_id: int
     customer_id: int
     date: str=None 
-class ProductInfo(BaseModel):
-    product_id: int
-    price: int
-    quantity: int
-    book_id: int
+
 class UserLogin(BaseModel):
     email: str = None
     password:str=None
