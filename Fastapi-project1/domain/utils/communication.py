@@ -5,8 +5,8 @@ from email.mime.multipart import MIMEMultipart
 
 
 #ToDo: replace with email and app password
-EMAIL_SENDER = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+EMAIL_SENDER = "librarymanager.se@gmail.com"
+PASSWORD = "jirf ctiz ieia zupd"
 
 def send_mail(user_email: str, subject: str, body: str):
     if EMAIL_SENDER and PASSWORD:
@@ -17,7 +17,7 @@ def send_mail(user_email: str, subject: str, body: str):
 
         msg.attach(MIMEText(body, 'plain'))
 
-        server = smtplib.SMTP('smtp.library.com', 587)  # Replace with your domain's SMTP server and port
+        server = smtplib.SMTP('smtp.gmail.com', 587)  # Replace with your domain's SMTP server and port
         server.starttls()
         server.login(EMAIL_SENDER, PASSWORD)
         server.send_message(msg)
