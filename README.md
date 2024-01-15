@@ -2,7 +2,8 @@
 
 ## Course Details
 
-- **Course Name:** Dynamic Web Systems (M7011E)
+- **University:**  Luleå University of Technology
+- **Course Name:** Dynamic Web Systems (M7011E) 
 - **Instructor:** Sandeep Patil
 - **Semester/Year:** LP2/2023
 
@@ -156,7 +157,7 @@ Feel free to explore each directory for more detailed information and comments w
 
 ## Additional Information
 
-🔗 **GitHub Repository:** [Explore Project](https://github.com/1Ahm1/M7011E_project_grupp11)
+🔗 **GitHub Repository:** [Based on this Project from D0018E course](https://github.com/1Ahm1/D0018e_project/tree/main)
 
 🎬 **YouTube Demo:** [Watch on YouTube](https://youtu.be/ZdXfpUPodkw)
 
