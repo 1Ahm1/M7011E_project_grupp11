@@ -154,6 +154,13 @@ The frontend follows Angular's best practices for maintainability and scalabilit
 
 Feel free to explore each directory for more detailed information and comments within the code files.
 
+## Additional Information
+
+🔗 **GitHub Repository:** [Explore Project](https://github.com/1Ahm1/M7011E_project_grupp11)
+
+🎬 **YouTube Demo:** [Watch on YouTube]()
+
+
 ## Run Project
 
 Execute the project by double-clicking on the provided run batch file. The script automates the following processes:
